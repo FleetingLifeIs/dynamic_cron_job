@@ -35,8 +35,8 @@ python manager.py migrate
 python manager.py createsuperuser
 
 # 启动celery worker 和 beat
-celery -A Django_celery beat -l info
-celery worker -A Django_celery -l info -P eventlet
+celery -A dynamic_cron_job beat -l info
+celery worker -A dynamic_cron_job -l info -P eventlet
 
 # 启动项目
 python manager.py runserver
