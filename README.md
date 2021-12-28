@@ -34,6 +34,10 @@ python manager.py migrate
 # 创建admin 超级管理员
 python manager.py createsuperuser
 
+# 启动celery worker 和 beat
+celery -A Django_celery beat -l info
+celery worker -A Django_celery -l info -P eventlet
+
 # 启动项目
 python manager.py runserver
 
